@@ -1,7 +1,11 @@
-<div fxLayout="column">
+<div fxLayout="column" style="overflow: auto;">
 
-    <div fxLayout="row" style="margin: 10px; height:100px;" *ngFor="let hobo of listing">
+    <div fxLayout="row" style="margin: 10px; min-height:100px;" *ngFor="let hobo of listing">
         <img fxFlex="30" style="width:100%" src="{{hobo.picture}}">
-        <h3 fxFlex>{{hobo.timestamp | date }}</h3>
+        <div fxFlex fxLayout="column" style="margin-left: 15px;" fxLayoutAlign="start start">
+            <h4 style="margin-bottom:5px; margin-top:5px;">{{ hobo.timestamp | date }}</h4>
+            <span *ngIf="hobo.extrainfo !== null">{{hobo.gender}} - {{hobo.race}}<br>{{hobo.extrainfo.comments}}</span>
+        </div>
     </div>
+
 </div>

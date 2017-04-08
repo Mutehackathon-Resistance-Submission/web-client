@@ -82,7 +82,11 @@ export class MapComponent implements OnInit {
         this.mapConfig.lat,
         this.mapConfig.lon,
         this.pictureUpladed,
-        {}
+        {
+          comments: this.comments,
+          gender: this.selectedGender,
+          race: this.selectedRace
+        }
       )
         .subscribe(response => {
           console.log(response);

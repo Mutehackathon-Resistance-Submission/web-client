@@ -31,6 +31,7 @@ import { SideContentAreaComponent } from './side-content-area/side-content-area.
 import { AboutComponent } from './about/about.component';
 import { HowToComponent } from './how-to/how-to.component';
 import { HomelessListingComponent } from './homeless-listing/homeless-listing.component';
+import { HomelessMapComponent } from './homeless-map/homeless-map.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HomelessListingComponent } from './homeless-listing/homeless-listing.co
     SideContentAreaComponent,
     AboutComponent,
     HowToComponent,
-    HomelessListingComponent
+    HomelessListingComponent,
+    HomelessMapComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -58,7 +60,8 @@ import { HomelessListingComponent } from './homeless-listing/homeless-listing.co
       { path: 'login', component: LoginComponent },
       { path: 'about', component: AboutComponent },
       { path: 'howto', component: HowToComponent },
-      { path: 'admin/listing', component: HomelessListingComponent }
+      { path: 'admin/listing', component: HomelessListingComponent },
+      { path: 'admin/map', component: HomelessMapComponent }
     ]),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCgIV6IM82_ySNaGaopPe1UaUwXl1sJoQw'

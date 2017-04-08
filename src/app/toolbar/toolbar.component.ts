@@ -22,12 +22,22 @@ export class ToolbarComponent implements OnInit {
         switch (route.url) {
           case '/':
             return 'Photolocation';
+
           case '/map':
             return 'Current Location';
+
           case '/about':
             return 'About Photolocation';
+
           case '/howto':
             return 'How To';
+
+          case '/admin/listing':
+            return 'Listing';
+
+          case '/admin/map':
+            return 'Sightings Map';
+
           default:
             return '';
         }

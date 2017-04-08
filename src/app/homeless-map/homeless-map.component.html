@@ -1,0 +1,8 @@
+<div fxFlex fxLayout="column">
+
+    <sebm-google-map *ngIf="mapConfig != null" fxFlex [latitude]="mapConfig.lat" [longitude]="mapConfig.lon" [zoom]="mapConfig.zoom">
+        <sebm-google-map-marker *ngFor="let homeCoord of homelessCoords" [latitude]="homeCoord.latitude" [longitude]="homeCoord.longitude">
+        </sebm-google-map-marker>
+    </sebm-google-map>
+
+</div>
