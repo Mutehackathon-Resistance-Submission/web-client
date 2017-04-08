@@ -24,7 +24,7 @@ export class HomelessTrackingService {
 
   submitHomelessSighting(lat: Number, lon: Number, picture: string, extraInfo: any): Observable<any> {
     return this.http
-      .post('http://192.168.1.156:3000/sightings', {
+      .post('https://ancient-brook-44784.herokuapp.com/sightings', {
         lat: lat,
         lon: lon,
         timestamp: Date.now(),
