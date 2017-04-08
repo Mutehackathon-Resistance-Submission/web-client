@@ -1,6 +1,6 @@
 <div fxLayout="column" style="overflow: auto;">
 
-    <md-card *ngFor="let hobo of listing" fxLayout="row" style="margin: 10px; max-height:120px; padding:0" (click)="viewHobo(hobo)">
+    <md-card *ngFor="let hobo of listing" fxLayout="row" style="margin: 10px; min-height:120px; max-height:120px; padding:0" (click)="viewHobo(hobo)">
         <img fxFlex="30" style="width:100%" src="{{hobo.url}}">
         <div fxFlex fxLayout="column" style="margin-left: 15px;" fxLayoutAlign="start start">
             <h4 style="margin-bottom:5px; margin-top:5px;">{{ hobo.timestamp | date }}</h4>

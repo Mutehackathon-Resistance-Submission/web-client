@@ -24,7 +24,7 @@ export class HomelessListingComponent implements OnInit {
     this.tracking.getAllHomelessSightings().subscribe(results => {
       console.log('Listings: ', results);
       this.listing = results;
-      this.listing.forEach(hobo => {
+      this.listing.forEach((hobo) => {
         this.http
           .get(`https://ancient-brook-44784.herokuapp.com/picture?timestamp=${hobo.timestamp}`)
           .subscribe(data => {
