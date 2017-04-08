@@ -1,3 +1,7 @@
 small {
     padding-bottom: 5px;
 }
+
+:host {
+    background: url(/assets/background.jpg) fixed top / cover;
+}

@@ -1,15 +1,9 @@
 <div fxLayoutAlign="start center" fxFlex fxLayout="column">
-    <div fxFlex></div>
-    <div fxLayout="row" fxLayoutAlign="center center">
+    <div style="margin-top:15px;" fxLayout="row" fxLayoutAlign="center center">
         <img fxFlex="60" src="assets/L-Muteh-Logo-Black.png">
     </div>
-    <h2>{{appName}}</h2>
-    <h5 style="margin-top:0px">Stopping Homelessness One Photo At A Time</h5>
-    <button (click)="recordSighting()" md-raised-button>Record Sighting</button>
+    <h4 style="margin-top:5px; text-align: center">Stopping Homelessness One Photo At A Time</h4>
     <div fxFlex></div>
-    <small>
-      <a href="https://github.com/EliCDavis">Eli Davis</a> - 
-      <a href="http://joshua.church">Joshua Church</a> - 
-      <a href="https://github.com/ChandlerRDill">Chandler Dill</a>
-    </small>
+    <button style="margin-bottom: 15px;" (click)="recordSighting()" md-raised-button>Record Sighting</button>
+
 </div>

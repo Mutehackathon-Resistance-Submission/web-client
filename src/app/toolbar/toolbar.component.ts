@@ -21,7 +21,7 @@ export class ToolbarComponent implements OnInit {
       .map((route: NavigationStart) => {
         switch (route.url) {
           case '/':
-            return 'Welcome';
+            return 'Photolocation';
           case '/map':
             return 'Current Location';
           case '/about':

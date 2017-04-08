@@ -30,6 +30,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SideContentAreaComponent } from './side-content-area/side-content-area.component';
 import { AboutComponent } from './about/about.component';
 import { HowToComponent } from './how-to/how-to.component';
+import { HomelessListingComponent } from './homeless-listing/homeless-listing.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { HowToComponent } from './how-to/how-to.component';
     ToolbarComponent,
     SideContentAreaComponent,
     AboutComponent,
-    HowToComponent
+    HowToComponent,
+    HomelessListingComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -55,7 +57,8 @@ import { HowToComponent } from './how-to/how-to.component';
       { path: 'map', component: MapComponent },
       { path: 'login', component: LoginComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'howto', component: HowToComponent }
+      { path: 'howto', component: HowToComponent },
+      { path: 'admin/listing', component: HomelessListingComponent }
     ]),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCgIV6IM82_ySNaGaopPe1UaUwXl1sJoQw'
