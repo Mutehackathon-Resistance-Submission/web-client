@@ -3,6 +3,7 @@ import { MdDialog } from '@angular/material';
 import { ErrorRetrievingLocationDialogComponent } from '../error-retrieving-location-dialog/error-retrieving-location-dialog.component';
 import { Router } from '@angular/router';
 
+import { GpsTrackingService } from '../services/gps-tracking.service';
 
 @Component({
   selector: 'app-map',
@@ -11,27 +12,29 @@ import { Router } from '@angular/router';
 })
 export class MapComponent implements OnInit {
 
-  lat: Number;
-  lon: Number;
+  mapConfig: any;
 
-  constructor(private dialog: MdDialog, private router: Router) {
+  constructor(private dialog: MdDialog, private router: Router, private gpsTracking: GpsTrackingService) {
   }
 
   ngOnInit() {
 
-    if ("geolocation" in navigator) {
+    this.gpsTracking.getLatLon$().subscribe((pos) => {
+      if (pos === null) {
+        this.errorOut();
+      } else {
+        this.mapConfig = pos;
+      }
+    });
 
-    } else {
-      this.dialog.open(ErrorRetrievingLocationDialogComponent)
-        .afterClosed()
-        .subscribe(result => {
-          this.router.navigate(['/']);
-        });
-    }
-
-    this.lat = 32.2988;
-    this.lon = -90.1848;
   }
 
+  private errorOut(): void {
+    this.dialog.open(ErrorRetrievingLocationDialogComponent)
+      .afterClosed()
+      .subscribe(result => {
+        this.router.navigate(['/']);
+      });
+  }
 
 }

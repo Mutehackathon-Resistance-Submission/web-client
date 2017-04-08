@@ -1,2 +1,13 @@
-<sebm-google-map style="width:100%; height:100%" [latitude]="lat" [longitude]="lon">
-</sebm-google-map>
+<div fxFlex fxLayout="column">
+    <sebm-google-map *ngIf="mapConfig != null" fxFlex="50" [latitude]="mapConfig.lat" [longitude]="mapConfig.lon" [zoom]="mapConfig.zoom">
+    </sebm-google-map>
+
+    <md-input-container>
+        <input mdInput placeholder="Favorite food" value="Sushi">
+    </md-input-container>
+
+    <div fxFlex></div>
+
+    <button md-raised-button style="margin: 10px">Submit</button>
+
+</div>

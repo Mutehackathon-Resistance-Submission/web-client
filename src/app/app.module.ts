@@ -16,6 +16,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 
 // App Services
 import { AppDetailsService } from './services/app-details.service';
+import { GpsTrackingService } from './services/gps-tracking.service';
 
 // App Components
 import { HomeComponent } from './home/home.component';
@@ -48,7 +49,10 @@ import { ErrorRetrievingLocationDialogComponent } from './error-retrieving-locat
     })
   ],
   entryComponents: [ErrorRetrievingLocationDialogComponent],
-  providers: [AppDetailsService],
+  providers: [
+    AppDetailsService,
+    GpsTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
