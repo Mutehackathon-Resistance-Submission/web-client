@@ -13,16 +13,20 @@ import 'hammerjs';
 
 // 3rd Party
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 // App Services
 import { AppDetailsService } from './services/app-details.service';
 import { GpsTrackingService } from './services/gps-tracking.service';
+import { HomelessTrackingService } from './services/homeless-tracking.service';
+
 
 // App Components
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { ErrorRetrievingLocationDialogComponent } from './error-retrieving-location-dialog/error-retrieving-location-dialog.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,8 @@ import { ErrorRetrievingLocationDialogComponent } from './error-retrieving-locat
     HomeComponent,
     LoginComponent,
     MapComponent,
-    ErrorRetrievingLocationDialogComponent
+    ErrorRetrievingLocationDialogComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -46,12 +51,14 @@ import { ErrorRetrievingLocationDialogComponent } from './error-retrieving-locat
     ]),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCgIV6IM82_ySNaGaopPe1UaUwXl1sJoQw'
-    })
+    }),
+    ImageUploadModule.forRoot()
   ],
   entryComponents: [ErrorRetrievingLocationDialogComponent],
   providers: [
     AppDetailsService,
-    GpsTrackingService
+    GpsTrackingService,
+    HomelessTrackingService
   ],
   bootstrap: [AppComponent]
 })

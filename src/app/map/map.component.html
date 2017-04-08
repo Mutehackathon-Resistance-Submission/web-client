@@ -1,13 +1,37 @@
 <div fxFlex fxLayout="column">
-    <sebm-google-map *ngIf="mapConfig != null" fxFlex="50" [latitude]="mapConfig.lat" [longitude]="mapConfig.lon" [zoom]="mapConfig.zoom">
+
+    <sebm-google-map *ngIf="mapConfig != null" fxFlex [latitude]="mapConfig.lat" [longitude]="mapConfig.lon" [zoom]="mapConfig.zoom">
+        <sebm-google-map-marker [latitude]="mapConfig.lat" [longitude]="mapConfig.lon">
+        </sebm-google-map-marker>
     </sebm-google-map>
 
-    <md-input-container>
-        <input mdInput placeholder="Favorite food" value="Sushi">
-    </md-input-container>
+    <image-upload *ngIf="pictureUpladed == null" (onFileUploadFinish)="fileUploaded($event)" [buttonCaption]="'Provide Image (Required)'"></image-upload>
 
-    <div fxFlex></div>
+    <div *ngIf="pictureUpladed != null" fxLayout="column" style="margin: 10px">
 
-    <button md-raised-button style="margin: 10px">Submit</button>
+        <small>
+            Provide Any Extra Data:
+        </small>
+
+        <md-select placeholder="Gender" [(ngModel)]="selectedGender" name="gender">
+            <md-option *ngFor="let gender of genders" [value]="gender.value">
+                {{gender.viewValue}}
+            </md-option>
+        </md-select>
+
+        <md-select placeholder="Race" [(ngModel)]="selectedRace" name="race">
+            <md-option *ngFor="let race of races" [value]="race.value">
+                {{race.viewValue}}
+            </md-option>
+        </md-select>
+
+        <md-input-container class="example-full-width">
+            <textarea mdInput [value]="comments" placeholder="Enter Any Comments..."></textarea>
+        </md-input-container>
+
+
+        <button (click)="submitData()" style="background-color: #9cba64 " md-raised-button>Submit</button>
+
+    </div>
 
 </div>

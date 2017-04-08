@@ -4,14 +4,9 @@
         Hey
     </md-sidenav>
 
-    <!--Rest of the content-->
     <div fxLayout="column" fxFlex>
 
-        <md-toolbar fxLayout="column">
-            <button md-raised-button (click)="sidenav.toggle()">
-              <md-icon>home</md-icon>
-            </button>
-        </md-toolbar>
+        <app-toolbar></app-toolbar>
 
         <div fxLayout="column" fxFlex>
             <router-outlet></router-outlet>
