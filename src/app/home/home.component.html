@@ -1,6 +1,8 @@
 <div fxLayoutAlign="start center" fxFlex fxLayout="column">
     <div fxFlex></div>
-    <img style="width: 60%;" src="http://localhost:4200/assets/L-Muteh-Logo-Black.png">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <img fxFlex="60" src="assets/L-Muteh-Logo-Black.png">
+    </div>
     <h2>{{appName}}</h2>
     <h5 style="margin-top:0px">Stopping Homelessness One Photo At A Time</h5>
     <button (click)="recordSighting()" md-raised-button>Record Sighting</button>

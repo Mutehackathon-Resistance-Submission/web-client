@@ -27,6 +27,7 @@ import { LoginComponent } from './login/login.component';
 import { MapComponent } from './map/map.component';
 import { ErrorRetrievingLocationDialogComponent } from './error-retrieving-location-dialog/error-retrieving-location-dialog.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SideContentAreaComponent } from './side-content-area/side-content-area.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     LoginComponent,
     MapComponent,
     ErrorRetrievingLocationDialogComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SideContentAreaComponent
   ],
   imports: [
     BrowserAnimationsModule,

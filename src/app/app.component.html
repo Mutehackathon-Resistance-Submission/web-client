@@ -1,12 +1,20 @@
 <md-sidenav-container fxLayout="column" fxFlex>
 
     <md-sidenav #sidenav mode="side">
-        Hey
+        <div fxLayout="column" style="min-width: 150px;">
+            <button md-button routerLink> About</button>
+            <button md-button routerLink> How To</button>
+            <button md-button routerLink> More Info</button>
+        </div>
     </md-sidenav>
 
     <div fxLayout="column" fxFlex>
 
         <app-toolbar></app-toolbar>
+
+        <button id="sidenav-button" md-mini-fab (click)="sidenav.toggle()">
+            <md-icon>home</md-icon>
+        </button>
 
         <div fxLayout="column" fxFlex>
             <router-outlet></router-outlet>

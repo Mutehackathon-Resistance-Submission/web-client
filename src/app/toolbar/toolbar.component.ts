@@ -21,9 +21,9 @@ export class ToolbarComponent implements OnInit {
       .map((route: NavigationStart) => {
         switch (route.url) {
           case '/':
-            return 'muteh';
+            return 'Welcome';
           case '/map':
-            return 'Tag Your Hobomon';
+            return 'Current Location';
           default:
             return '';
         }

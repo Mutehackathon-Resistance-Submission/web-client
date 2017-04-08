@@ -5,7 +5,7 @@
         </sebm-google-map-marker>
     </sebm-google-map>
 
-    <image-upload *ngIf="pictureUpladed == null" (onFileUploadFinish)="fileUploaded($event)" [buttonCaption]="'Provide Image (Required)'"></image-upload>
+    <image-upload *ngIf="pictureUpladed == null" (onFileUploadFinish)="fileUploaded($event)" [buttonCaption]="'Provide Image'"></image-upload>
 
     <div *ngIf="pictureUpladed != null" fxLayout="column" style="margin: 10px">
 
@@ -30,7 +30,7 @@
         </md-input-container>
 
 
-        <button (click)="submitData()" style="background-color: #9cba64 " md-raised-button>Submit</button>
+        <button (click)="submitData()" style="background-color: #9cba64 " md-raised-button>Upload</button>
 
     </div>
 
