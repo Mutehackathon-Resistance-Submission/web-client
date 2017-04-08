@@ -61,6 +61,7 @@ import { HomelessMapComponent } from './homeless-map/homeless-map.component';
       { path: 'about', component: AboutComponent },
       { path: 'howto', component: HowToComponent },
       { path: 'admin/listing', component: HomelessListingComponent },
+      { path: 'admin/map/:id', component: HomelessMapComponent },
       { path: 'admin/map', component: HomelessMapComponent }
     ]),
     AgmCoreModule.forRoot({

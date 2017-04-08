@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HomelessTrackingService } from '../services/homeless-tracking.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-homeless-listing',
@@ -11,7 +13,7 @@ export class HomelessListingComponent implements OnInit {
 
   listing: any[];
 
-  constructor(private tracking: HomelessTrackingService) { 
+  constructor(private tracking: HomelessTrackingService, private route: Router) { 
     this.listing = [];
   }
 
@@ -23,5 +25,10 @@ export class HomelessListingComponent implements OnInit {
     });
 
   }
+
+  viewHobo(hobo: any): void {
+    console.log(hobo);
+    this.route.navigate([`admin/map/${hobo.timestamp}`]);
+  } 
 
 }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 import { HomelessTrackingService } from '../services/homeless-tracking.service';
 import { GpsTrackingService } from '../services/gps-tracking.service';
+
 
 @Component({
   selector: 'app-homeless-map',
@@ -15,9 +18,11 @@ export class HomelessMapComponent implements OnInit {
   homelessCoords: any[];
 
   constructor(private gpsTracking: GpsTrackingService,
-    private homelessTracking: HomelessTrackingService) {
+    private homelessTracking: HomelessTrackingService,
+    private route: Router) {
 
-      this.homelessCoords = [];
+    this.homelessCoords = [];
+    this.mapConfig = null;
 
   }
 
@@ -29,7 +34,21 @@ export class HomelessMapComponent implements OnInit {
 
     this.homelessTracking.getAllHomelessSightings().subscribe(homeless => {
       this.homelessCoords = homeless;
+      let pot = this.route.url.split("/");
+      if (!isNaN(parseInt(pot[pot.length - 1]))) {
+        let timestamp = parseInt(pot[pot.length - 1]);
+        this.homelessCoords.forEach(hobo => {
+          if (hobo.timestamp === timestamp) {
+            this.mapConfig = {
+              lat: hobo.latitude,
+              lon: hobo.longitude
+            }
+          }
+        });
+      }
     });
+
+    console.log(this.route.url);
 
   }
 
