@@ -1,10 +1,12 @@
 <md-sidenav-container fxLayout="column" fxFlex>
 
     <md-sidenav #sidenav mode="side">
-        <div fxLayout="column" style="min-width: 150px;">
-            <button md-button routerLink> About</button>
-            <button md-button routerLink> How To</button>
-            <button md-button routerLink> More Info</button>
+        <div fxLayout="column" fxLayoutAlign="start center" style="min-width: 150px;">
+            <h3>Menu</h3>
+            <button md-button routerLink="/" (click)="sidenav.toggle()">Home</button>
+            <button md-button routerLink="/about" (click)="sidenav.toggle()">About</button>
+            <button md-button routerLink="howto" (click)="sidenav.toggle()">How To</button>
+            <button md-button routerLink>More Info</button>
         </div>
     </md-sidenav>
 
@@ -13,7 +15,7 @@
         <app-toolbar></app-toolbar>
 
         <button id="sidenav-button" md-mini-fab (click)="sidenav.toggle()">
-            <md-icon>home</md-icon>
+            <md-icon>menu</md-icon>
         </button>
 
         <div fxLayout="column" fxFlex>

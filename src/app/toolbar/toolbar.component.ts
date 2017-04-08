@@ -24,6 +24,10 @@ export class ToolbarComponent implements OnInit {
             return 'Welcome';
           case '/map':
             return 'Current Location';
+          case '/about':
+            return 'About Photolocation';
+          case '/howto':
+            return 'How To';
           default:
             return '';
         }

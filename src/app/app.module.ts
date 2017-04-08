@@ -28,6 +28,8 @@ import { MapComponent } from './map/map.component';
 import { ErrorRetrievingLocationDialogComponent } from './error-retrieving-location-dialog/error-retrieving-location-dialog.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SideContentAreaComponent } from './side-content-area/side-content-area.component';
+import { AboutComponent } from './about/about.component';
+import { HowToComponent } from './how-to/how-to.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { SideContentAreaComponent } from './side-content-area/side-content-area.
     MapComponent,
     ErrorRetrievingLocationDialogComponent,
     ToolbarComponent,
-    SideContentAreaComponent
+    SideContentAreaComponent,
+    AboutComponent,
+    HowToComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -50,6 +54,8 @@ import { SideContentAreaComponent } from './side-content-area/side-content-area.
       { path: '', component: HomeComponent },
       { path: 'map', component: MapComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'howto', component: HowToComponent }
     ]),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCgIV6IM82_ySNaGaopPe1UaUwXl1sJoQw'
