@@ -6,7 +6,7 @@ export class AppDetailsService {
   appName: string;
 
   constructor() {
-    this.appName = 'Hobomon GO';
+    this.appName = 'Photolocation';
   }
 
   getAppName(): string {
