@@ -10,6 +10,7 @@ html {
 app-root,
 app-home,
 app-map,
+app-homeless-listing,
 body {
     font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
     display: flex;

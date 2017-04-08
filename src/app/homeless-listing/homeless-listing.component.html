@@ -1,3 +1,7 @@
-<p>
-  homeless-listing works!
-</p>
+<div fxLayout="column">
+
+    <div fxLayout="row" style="margin: 10px; height:100px;" *ngFor="let hobo of listing">
+        <img fxFlex="30" style="width:100%" src="{{hobo.picture}}">
+        <h3 fxFlex>{{hobo.timestamp | date }}</h3>
+    </div>
+</div>

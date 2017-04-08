@@ -11,13 +11,15 @@ export class HomelessListingComponent implements OnInit {
 
   listing: any[];
 
-
-  constructor(private tracking: HomelessTrackingService) { }
+  constructor(private tracking: HomelessTrackingService) { 
+    this.listing = [];
+  }
 
   ngOnInit() {
 
     this.tracking.getAllHomelessSightings().subscribe(results => {
       console.log('Listings: ', results);
+      this.listing = results;
     });
 
   }
